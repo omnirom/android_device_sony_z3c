@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from the common shinano definitions
-include device/sony/shinano-common/BoardConfigCommon.mk
+# inherit from the shinano-common definitions
+include device/sony/shinano-common/BoardConfigCommonOmni.mk
 
 # inherit from the proprietary version
-#-include vendor/sony/z3c/BoardConfigVendor.mk
+-include vendor/sony/shinano-aries-caf//BoardConfigVendor.mk
 
-DEVICE_PATH := device/sony/z3c
+DEVICE_PATH := device/sony/aries
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := D5803,D5833,z3c,aries
@@ -28,17 +28,22 @@ TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # Kernel properties
-TARGET_KERNEL_CONFIG := lineageos_shinano_aries_defconfig
+TARGET_KERNEL_CONFIG := omni_shinano_aries_defconfig
 
 # Partition information
 BOARD_VOLD_MAX_PARTITIONS := 25
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688 # 12656259072 - 16384
 
+# Radio capabilities
+BOARD_HAVE_RADIO := true
+
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Device-specific props
-TARGET_SYSTEM_PROP += device/sony/z3c/system.prop
+TARGET_SYSTEM_PROP += device/sony/aries/system.prop
 
-#D2TW
+# D2TW
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
+
+BOARD_KERNEL_SEPARATED_DT := true

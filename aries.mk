@@ -13,13 +13,13 @@
 # limitations under the License.
 
 # Inherit shinano-common definitions
-$(call inherit-product, device/sony/shinano-common/shinano.mk)
+$(call inherit-product, device/sony/shinano-common/shinano_omni.mk)
 
 # Include non-opensource parts
-$(call inherit-product, vendor/sony/z3c/z3c-vendor.mk)
+$(call inherit-product, vendor/sony/shinano-aries-caf/aries-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/sony/z3c/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/aries/overlay
 
 # Hardware-specific permissions
 PRODUCT_COPY_FILES += \

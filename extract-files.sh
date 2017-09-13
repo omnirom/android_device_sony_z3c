@@ -17,7 +17,7 @@
 
 set -e
 
-export DEVICE=z3c
+export DEVICE=aries
 export DEVICE_COMMON=shinano-common
 export PLATFORM_COMMON=msm8974-common
 export VENDOR=sony
