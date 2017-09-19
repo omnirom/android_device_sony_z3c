@@ -15,8 +15,7 @@
 # inherit from the shinano-common definitions
 include device/sony/shinano-common/BoardConfigCommonOmni.mk
 
-# inherit from the proprietary version
--include vendor/sony/shinano-aries-caf//BoardConfigVendor.mk
+include device/sony/leo/twrp.mk
 
 DEVICE_PATH := device/sony/aries
 
@@ -29,6 +28,8 @@ BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # Kernel properties
 TARGET_KERNEL_CONFIG := omni_shinano_aries_defconfig
+
+TARGET_RECOVERY_DEVICE_MODULES += twrp.fstab
 
 # Partition information
 BOARD_VOLD_MAX_PARTITIONS := 25
@@ -43,7 +44,7 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 # Device-specific props
 TARGET_SYSTEM_PROP += device/sony/aries/system.prop
 
-# D2TW
+# DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
 
 BOARD_KERNEL_SEPARATED_DT := true
