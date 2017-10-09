@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Inherit OMNI common Phone stuff.
-$(call inherit-product, device/sony/aries/aries.mk)
+$(call inherit-product, device/sony/z3c/z3c.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -27,12 +27,12 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Sony/D5803/D5833:6.0.1/23.5.A.
 PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="D5803-user 6.0.1 23.5.A.1.291 2769308465 release-keys"
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := omni_aries
-PRODUCT_DEVICE := aries
+PRODUCT_NAME := omni_z3c
+PRODUCT_DEVICE := z3c
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_MODEL := Xperia Z3C
 
-# Inherit from aries device
+# Inherit from z3c device
 $(call inherit-product, vendor/omni/config/gsm.mk)
 

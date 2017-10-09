@@ -19,7 +19,7 @@ $(call inherit-product, device/sony/shinano-common/shinano_omni.mk)
 $(call inherit-product, vendor/sony/shinano-aries-caf/aries-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/sony/aries/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/z3c/overlay
 
 # Hardware-specific permissions
 PRODUCT_COPY_FILES += \
