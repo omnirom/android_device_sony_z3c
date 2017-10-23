@@ -15,8 +15,6 @@
 # inherit from the shinano-common definitions
 include device/sony/shinano-common/BoardConfigCommonOmni.mk
 
-include device/sony/leo/twrp.mk
-
 DEVICE_PATH := device/sony/z3c
 
 # Assert
