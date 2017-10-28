@@ -25,7 +25,7 @@ TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # Kernel properties
-TARGET_KERNEL_CONFIG := omni_shinano_aries_defconfig
+TARGET_KERNEL_CONFIG := omni_shinano_z3c_defconfig
 
 TARGET_RECOVERY_DEVICE_MODULES += twrp.fstab
 
