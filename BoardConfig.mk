@@ -18,7 +18,7 @@ include device/sony/shinano-common/BoardConfigCommonOmni.mk
 DEVICE_PATH := device/sony/z3c
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := D5803,D5833,z3c,aries
+TARGET_OTA_ASSERT_DEVICE := none
 
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
