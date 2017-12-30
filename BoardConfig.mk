@@ -37,8 +37,6 @@ BOARD_HAVE_RADIO := true
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-# Device-specific props
-TARGET_SYSTEM_PROP += device/sony/z3c/system.prop
 
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
