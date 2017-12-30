@@ -15,47 +15,9 @@
 # Inherit shinano-common definitions
 $(call inherit-product, device/sony/shinano-common/shinano_omni.mk)
 
+# Inherit the product definitions
+include $(LOCAL_PATH)/product/*.mk
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/shinano-z3c-caf/z3c-vendor.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += device/sony/z3c/overlay
-
-# Hardware-specific permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
-
-# Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
-
-# Audio configs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
-
-# NFC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
-
-# Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sensor/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
-
-# Thermal manager
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/thermal/thermanager.xml:system/etc/thermanager.xml
-
-# Wifi
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bcmdhd/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
